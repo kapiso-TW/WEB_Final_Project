@@ -7,11 +7,11 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ asset('css/matchrec.css') }}" rel="stylesheet">
     </head>
     <body>
-        
         <!-- Login Form -->
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="/login">
             @csrf
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
