@@ -7,7 +7,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="{{ asset('css/personalinfo.css') }}" rel="stylesheet">
+        @vite(['resources/css/personalinfo.css'])
     </head>
     <body>
         <!-- PersonalInfo Form -->
