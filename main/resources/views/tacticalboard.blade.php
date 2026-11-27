@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@push('styles')
+    @vite(['resources/css/tacticalboard.css'])
+@endpush
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        @vite(['resources/css/tacticalboard.css'])
-    </head>
-    <body>
-        <!-- TacticalBoard Form -->
+{{-- view content --}}
+@section('content')
+    <h2>戰術板</h2>
+    <div class="card p-3">
         <form method="POST" action="/tacticalboard">
+            @csrf
+            <div class="mb-3">
+                <label for="tactic_name" class="form-label">戰術名稱</label>
+                <input type="text" name="tactic_name" id="tactic_name" class="form-control" required>
+            </div>
+            
+            {{-- 戰術板畫布或球員站位設定區... --}}
 
+            <button type="submit" class="btn btn-primary">儲存戰術</button>
         </form>
-    </body>
-</html>
+    </div>
+@endsection

@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@push('styles')
+    @vite(['resources/css/personalinfo.css'])
+@endpush
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        @vite(['resources/css/personalinfo.css'])
-    </head>
-    <body>
-        <!-- PersonalInfo Form -->
+{{-- view content --}}
+@section('content')
+    <h2>個人資料</h2>
+    <div class="card p-3">
         <form method="POST" action="/personalinfo">
-
+            @csrf
+            
         </form>
-    </body>
-</html>
+    </div>
+@endsection
